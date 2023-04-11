@@ -21,9 +21,9 @@
 
 2) <br/>`sudo apt install ros-noetic-ros-control* ros-noetic-control* ros-noetic-moveit*`
    if you face an error in the previous command try the following 
-   `sudo apt -o Dpkg::Options::="--force-overwrite" --fix-broken install`
-   `sudo apt update`
-   `sudo apt upgrade`
+   `sudo apt -o Dpkg::Options::="--force-overwrite" --fix-broken install`<br/>
+   <br>`sudo apt update`<br/>
+   `sudo apt upgrade`<br/>
 
 
 
