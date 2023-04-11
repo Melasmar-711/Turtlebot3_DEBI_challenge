@@ -6,6 +6,9 @@
 ## install turtlebot3 for ros noetic 
 `sudo apt-get install ros-noetic-turtlebot3 ros-noetic-turtlebot3-bringup ros-noetic-turtlebot3-description ros-noetic-turtlebot3-gazebo ros-noetic-turtlebot3-navigation ros-noetic-turtlebot3-simulations`
 
+<br/>
+<br/>
+<br/>
 
 
 ## setting up the work space
