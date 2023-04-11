@@ -32,7 +32,7 @@
 
    <br>`pip install -r requirements.txt`<br/>
 
-if you face any problems with the versions delete the version number from the requirments.txt or try to install that pkg with pip3 install
+   if you face any problems with the versions delete the version number from the requirments.txt or try to install that pkg with pip3 install
 
 
 4) build the catkin workspace `catkin_make`
