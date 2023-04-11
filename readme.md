@@ -28,7 +28,7 @@
 
 
 
-3) <br>install required packages in your environment<br/> `cd <br>Turtlebot3_DEBI_challenge`<br/>
+3) <br>install required packages in your environment<br/> <br>`cd Turtlebot3_DEBI_challenge`<br/>
 
    <br>`pip install -r requirements.txt`<br/>
 
