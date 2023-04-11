@@ -19,7 +19,8 @@
 1) clone the package using 
 `git clone https://github.com/Melasmar-711/Turtlebot3_DEBI_challenge.git`
 
-2)<br/>
+2) 
+<br/>
 `sudo apt install ros-noetic-ros-control* ros-noetic-control* ros-noetic-moveit*`
 <br/>
 if you face an error in the previous command try the following
