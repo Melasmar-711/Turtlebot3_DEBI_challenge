@@ -23,7 +23,7 @@
 
 3) build the catkin workspace `catkin_make`
 
-4) source your workspace `echo "source /Turtlebot3_DEBI_challenge/devel/setup.bash" >> ~/.bashrc`
+4) source your workspace `echo "/home/<user-name>/Tutrtlebot3_DEBI_Robotics_challenge/devel/setup.bash" >> ~/.bashrc` replace username with your username
 
 <br/>
 <br/>
