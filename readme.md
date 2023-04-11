@@ -50,3 +50,4 @@
 1) you need to export the model you are going to use first. i will export it permenantly in the .bashrc using `echo "export TURTLEBOT3_MODEL=waffle_pi">> ~/.bashrc`
 2) launch the turtlebot in your world but for now we will launch it in a premade world in the package using `roslaunch debi test.launch`
 
+
