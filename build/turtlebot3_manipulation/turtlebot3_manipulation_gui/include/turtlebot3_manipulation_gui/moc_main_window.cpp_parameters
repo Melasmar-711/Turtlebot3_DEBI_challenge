@@ -1,0 +1,7 @@
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_PACKAGE_NAME="turtlebot3_manipulation_gui"
+-DROSCONSOLE_BACKEND_LOG4CXX
+-o
+/home/asmar/Tutrtlebot3_DEBI_Robotics_challenge/build/turtlebot3_manipulation/turtlebot3_manipulation_gui/include/turtlebot3_manipulation_gui/moc_main_window.cpp
+/home/asmar/Tutrtlebot3_DEBI_Robotics_challenge/src/turtlebot3_manipulation/turtlebot3_manipulation_gui/include/turtlebot3_manipulation_gui/main_window.hpp

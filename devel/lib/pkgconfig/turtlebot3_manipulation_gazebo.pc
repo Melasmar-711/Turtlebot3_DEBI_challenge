@@ -1,0 +1,8 @@
+prefix=/home/asmar/Tutrtlebot3_DEBI_Robotics_challenge/devel
+
+Name: turtlebot3_manipulation_gazebo
+Description: Description of turtlebot3_manipulation_gazebo
+Version: 2.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
