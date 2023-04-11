@@ -30,7 +30,7 @@
 
 3) <br>install required packages in your environment<br/> `cd <br>Turtlebot3_DEBI_challenge`<br/>
 
-<br>`pip install -r requirements.txt`<br/>
+   <br>`pip install -r requirements.txt`<br/>
 
 if you face any problems with the versions delete the version number from the requirments.txt or try to install that pkg with pip3 install
 
