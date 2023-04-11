@@ -19,10 +19,9 @@
 1) clone the package using 
 `git clone https://github.com/Melasmar-711/Turtlebot3_DEBI_challenge.git`
 
-2)<br/>`sudo apt install ros-noetic-ros-control* ros-noetic-control* ros-noetic-moveit*`
+2) <br/>`sudo apt install ros-noetic-ros-control* ros-noetic-control* ros-noetic-moveit*`
 <br/>
 if you face an error in the previous command try the following
-<br/>
  `sudo apt -o Dpkg::Options::="--force-overwrite" --fix-broken install`
 <br/>
  `sudo apt update`
@@ -34,6 +33,9 @@ if you face an error in the previous command try the following
 
 3) install required packages in your environment `cd Turtlebot3_DEBI_challenge`
 `pip install -r requirements.txt`
+
+if you face any problems with the versions delete the version number from the requirments.txt or try to install that pkg with pip3 install
+
 
 4) build the catkin workspace `catkin_make`
 
