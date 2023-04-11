@@ -21,8 +21,7 @@
 
 2) <br/>`sudo apt install ros-noetic-ros-control* ros-noetic-control* ros-noetic-moveit*`
 <br/>
-if you face an error in the previous command try the following
- `sudo apt -o Dpkg::Options::="--force-overwrite" --fix-broken install`
+if you face an error in the previous command try the following `sudo apt -o Dpkg::Options::="--force-overwrite" --fix-broken install`
 <br/>
  `sudo apt update`
 <br/>
@@ -32,8 +31,9 @@ if you face an error in the previous command try the following
 
 
 3) install required packages in your environment `cd Turtlebot3_DEBI_challenge`
+<br/>
 `pip install -r requirements.txt`
-
+<br/>
 if you face any problems with the versions delete the version number from the requirments.txt or try to install that pkg with pip3 install
 
 
