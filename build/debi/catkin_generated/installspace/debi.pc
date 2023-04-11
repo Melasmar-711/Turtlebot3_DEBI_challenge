@@ -1,8 +1,0 @@
-prefix=/home/asmar/Tutrtlebot3_DEBI_Robotics_challenge/install
-
-Name: debi
-Description: Description of debi
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

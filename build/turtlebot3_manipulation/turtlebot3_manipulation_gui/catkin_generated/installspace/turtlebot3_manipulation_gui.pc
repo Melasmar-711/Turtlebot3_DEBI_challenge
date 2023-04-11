@@ -1,8 +1,0 @@
-prefix=/home/asmar/Tutrtlebot3_DEBI_Robotics_challenge/install
-
-Name: turtlebot3_manipulation_gui
-Description: Description of turtlebot3_manipulation_gui
-Version: 2.0.2
-Cflags: -I${prefix}/include -I/usr/include/eigen3
-Libs: -L${prefix}/lib 
-Requires: geometry_msgs roscpp std_msgs sensor_msgs moveit_msgs moveit_core moveit_ros_planning moveit_ros_planning_interface
