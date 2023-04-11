@@ -7,12 +7,18 @@
 
 ## install turtlebot3 for ros noetic 
 `sudo apt-get install ros-noetic-turtlebot3 ros-noetic-turtlebot3-bringup ros-noetic-turtlebot3-description ros-noetic-turtlebot3-gazebo ros-noetic-turtlebot3-navigation ros-noetic-turtlebot3-simulations`
+<br/>
 `sudo apt install ros-noetic-ros-control* ros-noetic-control* ros-noetic-moveit*`
+<br/>
 if you face an error in the previous command try the following
 `sudo apt -o Dpkg::Options::="--force-overwrite" --fix-broken install`
+<br/>
 `sudo apt update`
+<br/>
 `sudo apt upgrade`
+<br/>
 `catkin_make`
+<br/>
 
 
 <br/>
