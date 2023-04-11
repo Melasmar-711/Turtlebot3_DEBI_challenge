@@ -1,7 +1,12 @@
 # DEBI_Robotics_challenge
 
+
+
+
 ## install turtlebot3 for ros noetic 
 `sudo apt-get install ros-noetic-turtlebot3 ros-noetic-turtlebot3-bringup ros-noetic-turtlebot3-description ros-noetic-turtlebot3-gazebo ros-noetic-turtlebot3-navigation ros-noetic-turtlebot3-simulations`
+
+
 
 ## setting up the work space
 
@@ -14,6 +19,9 @@
 3) build the catkin workspace `catkin_make`
 
 4) source your workspace `echo "source /Turtlebot3_DEBI_challenge/devel/setup.bash" >> ~/.bashrc`
+
+
+
 
 
 ## opening the turtlebot3 in gazebo
