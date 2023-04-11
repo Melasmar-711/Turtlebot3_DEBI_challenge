@@ -5,3 +5,5 @@
 1) clone the package using 
 `git clone https://github.com/Melasmar-711/Turtlebot3_DEBI_challenge.git`
 
+2)
+
