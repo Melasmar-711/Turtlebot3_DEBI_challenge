@@ -51,6 +51,6 @@
 2) launch the turtlebot in your world but for now we will launch it in a premade world in the package using `roslaunch debi test.launch`
 
 # openning gazebo in Challenge_wolrd
-1) roslaunch debi rviz_gazebo.launch
+1) `roslaunch debi rviz_gazebo.launch`
 
 
