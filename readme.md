@@ -50,7 +50,7 @@
 <br/>
    
 -------------------------
-<br/>   
+   
 ## openning gazebo in DEBI_Challenge_wolrd with rviz and moveit configuration
    
 1) `roslaunch debi rviz_gazebo.launch`
