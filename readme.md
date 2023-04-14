@@ -2,7 +2,7 @@
 
 <br/>
 <br/>
-<br/>
+-------------------------------------------------------
 
 
 ## install turtlebot3 for ros noetic 
@@ -26,8 +26,6 @@
    `sudo apt upgrade`<br/>
 
 
-
-
 3) <br>install required packages in your environment<br/> <br>`cd Turtlebot3_DEBI_challenge`<br/>
 
    <br>`pip install -r requirements.txt`<br/>
@@ -43,14 +41,16 @@
 <br/>
 <br/>
 
-
+-----------------------------------------------------------------
 
 ## opening the turtlebot3 in gazebo
 
 1) you need to export the model you are going to use first. i will export it permenantly in the .bashrc using `echo "export TURTLEBOT3_MODEL=waffle_pi">> ~/.bashrc`
 2) launch the turtlebot in your world but for now we will launch it in a premade world in the package using `roslaunch debi test.launch`
-
-# openning gazebo in Challenge_wolrd
+<br/>
+---------------------------------------------------------------------------------   
+# openning gazebo in DEBI_Challenge_wolrd with rviz and moveit configuration
+   
 1) `roslaunch debi rviz_gazebo.launch`
 
 
