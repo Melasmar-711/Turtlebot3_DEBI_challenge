@@ -1,0 +1,12 @@
+global_costmap:
+
+  global_frame: /map                # the frame in which the costmap should be built
+  static_map: true                  # determines whether or not the costmap should initialize itself based on a map
+  rolling_window: false             # determines whether or not the costmap should be centered on the robot
+
+  plugins:
+    - {name: static_layer,            type: "costmap_2d::StaticLayer"}
+    - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}
+
+
+
