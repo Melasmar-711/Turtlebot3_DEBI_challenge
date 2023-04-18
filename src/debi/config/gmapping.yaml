@@ -1,10 +1,10 @@
 #gmapping .yaml file
-resolution: 0.05
-maxUrange: 5.0
-maxRange: 15.0
-mapUpdateInterval: 2.0
-minimumScore: 0
-
+odom_frame_id: odom
+base_frame_id: base_footprint
+odom_frame: odom    
+base_frame: base_footprint 
+map_update_interval: 5.0
+maxUrange: 7.0
 sigma: 0.05
 kernelSize: 1
 lstep: 0.05
@@ -13,29 +13,24 @@ iterations: 5
 lsigma: 0.075
 ogain: 3.0
 lskip: 0
+#minimumScore: 50
 srr: 0.1
 srt: 0.2
 str: 0.1
 stt: 0.2
-
-linearUpdate: 1.0
-angularUpdate: 0.5
-
-temporalUpdate: -1.0
+linearUpdate: 0.2
+angularUpdate: 0.1
+temporalUpdate: 3.0
 resampleThreshold: 0.5
-particles: 30
-xmin: -10.0
-ymin: -10.0
-xmax: 10.0
-ymax: 10.0
+particles: 100
+xmin: -50.0
+ymin: -50.0
+xmax: 50.0
+ymax: 50.0
 delta: 0.05
-occ_thresh: 0.25
-prob_hit: 0.65
-prob_miss: 0.4
-
-
-
-
-
+llsamplerange: 0.01
+llsamplestep: 0.01
+lasamplerange: 0.005
+lasamplestep: 0.005
 
 

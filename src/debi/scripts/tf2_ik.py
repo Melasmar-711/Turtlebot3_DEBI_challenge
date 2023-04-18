@@ -10,11 +10,17 @@ import numpy as np
 from geometry_msgs.msg import PointStamped
 from geometry_msgs.msg import PoseStamped
 
+<<<<<<< HEAD
 import rospy # Python client library
+=======
+
+
+>>>>>>> f47dacd4046d1de246dd991b5e2304df4bfe3d4a
 import actionlib # ROS action library
 from control_msgs.msg import FollowJointTrajectoryAction, FollowJointTrajectoryGoal # Controller messages
 from std_msgs.msg import Float64 # 64-bit floating point numbers
 from trajectory_msgs.msg import JointTrajectoryPoint # Robot trajectories
+<<<<<<< HEAD
 from std_msgs.msg import String
 
 def move_to_absolute_pose(x, y, z):
@@ -75,6 +81,8 @@ def move_to_absolute_pose(x, y, z):
 
 
 
+=======
+>>>>>>> f47dacd4046d1de246dd991b5e2304df4bfe3d4a
 
 
 def move_to_pose(x,y,z):
@@ -84,7 +92,7 @@ def move_to_pose(x,y,z):
     
     ####################
     point = PointStamped()
-    point.header.frame_id = 'odom'
+    point.header.frame_id = 'map'
     point.point.x = x
     point.point.y = y
     point.point.z = z
@@ -196,7 +204,11 @@ def move_to_pose(x,y,z):
     
     # Clean up
     #moveit_commander.roscpp_shutdown()
+<<<<<<< HEAD
     #smoveit_commander.os._exit(0)
+=======
+    #moveit_commander.os._exit(0)
+>>>>>>> f47dacd4046d1de246dd991b5e2304df4bfe3d4a
 ###########################################################
 
 
@@ -226,6 +238,7 @@ def move_robot_gripper(joint_values):
 
 if __name__ == '__main__':
     try:
+<<<<<<< HEAD
 
         rospy.init_node('move_to_pose', anonymous=True)
         pub = rospy.Publisher('arm_state', String, queue_size=10)
@@ -260,6 +273,11 @@ if __name__ == '__main__':
           pub.publish('three_g')
          if i==3:
           pub.publish("done") 
+=======
+        move_to_pose(1.36,1.49,0.03)
+        
+        move_robot_gripper(-0.01)
+>>>>>>> f47dacd4046d1de246dd991b5e2304df4bfe3d4a
     except rospy.ROSInterruptException:
         pass
 

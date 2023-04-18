@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 image: map.pgm
+=======
+image: /home/asmar/map.pgm
+>>>>>>> f47dacd4046d1de246dd991b5e2304df4bfe3d4a
 resolution: 0.050000
 origin: [-10.000000, -10.000000, 0.000000]
 negate: 0

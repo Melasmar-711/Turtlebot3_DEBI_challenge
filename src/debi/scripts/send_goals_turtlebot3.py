@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 #!/usr/bin/env python3  
 
+=======
+#!/usr/bin/env python3
+>>>>>>> f47dacd4046d1de246dd991b5e2304df4bfe3d4a
 import rospy
 import actionlib
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
@@ -25,12 +29,24 @@ def send_goal(x, y, theta):
 
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     try:
     	pub = rospy.Publisher('state', String, queue_size=10)
     	rospy.init_node('send_goals_turtlebot3')
     	send_goal(1.2,0.62,0)       #1st ball
     	send_goal(1.44,0.64,0)
     	pub.publish('one')
+=======
+    rospy.init_node('send_goals_turtlebot3')
+    send_goal(1.5, 0.5, 0.1)
+            
+    send_goal(4.0, 2.0, 0.2)
+    
+    send_goal(4.0, 4.0, 0.3)
+    
+    send_goal(2.0, 4.0, 0.4)
+    
+>>>>>>> f47dacd4046d1de246dd991b5e2304df4bfe3d4a
 
     	#send_goal(4.0, 2.0, 0.2)
     	#send_goal(4.0, 4.0, 0.3)
