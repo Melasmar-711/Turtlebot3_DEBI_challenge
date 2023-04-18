@@ -7,15 +7,15 @@
 
 ![overview_tf](https://user-images.githubusercontent.com/114835445/232907309-46899771-ab2c-4855-9c35-7bcfdcb47bdc.png)
 
+
 ### Navigation Stack
 
 1) move_base http://wiki.ros.org/move_base
-2) Cost Map costmap_2d http://wiki.ros.org/costmap_2d
-3) Cost Map Obstacle Layer http://wiki.ros.org/costmap_2d/hydro/obstacles
-4) Cost Map Static Layer http://wiki.ros.org/costmap_2d/hydro/staticmap
+2) CostMap costmap_2d http://wiki.ros.org/costmap_2d
+3) CostMap Obstacle Layer http://wiki.ros.org/costmap_2d/hydro/obstacles
+4) CostMap Static Layer http://wiki.ros.org/costmap_2d/hydro/staticmap
 5) Global Planner http://wiki.ros.org/global_planner?distro=noetic
-6)  http://wiki.ros.org/navfn
-7) Local Planner base_local_planner http://wiki.ros.org/base_local_planner
+7) Local Planner http://wiki.ros.org/dwa_local_planner?distro=noetic
 
 -------------------------------------------------------------
 ## Install turtlebot3 for ros noetic 
@@ -62,7 +62,7 @@
    
 1) run `roslaunch debi rviz_gazebo.launch` to launch gazebo in DEBI_Challenge_wolrd with rviz and moveit configuration
 2) open a new terminal and run `python3 tf2_ik.py`to start the robot's planning process
-3) open another terminal and run `python3 send_goals_turtlebot3` to send the positions of the balls 
+3) open another terminal and run `python3 send_goals_turtlebot3.py` to send the positions of the balls 
 
 
 
