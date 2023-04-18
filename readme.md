@@ -1,4 +1,5 @@
 # DEBI_Robotics_challenge
+-------------------------------------------------------------
 
 <br/>
 
@@ -16,6 +17,7 @@
 4) CostMap Static Layer http://wiki.ros.org/costmap_2d/hydro/staticmap
 5) Global Planner http://wiki.ros.org/global_planner?distro=noetic
 7) Local Planner http://wiki.ros.org/dwa_local_planner?distro=noetic
+8) send goals by actionlib http://wiki.ros.org/actionlib
 
 -------------------------------------------------------------
 ## Install turtlebot3 for ros noetic 
