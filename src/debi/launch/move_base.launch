@@ -6,7 +6,7 @@
    <node name="map_server" pkg="map_server" type="map_server" args="$(find debi)/maps/map.yaml"/>
 
    <!-- Run send_goals_turtlebot3 -->
-   node pkg="debi" type="send_goals_turtlebot3.py" name="send_goals_turtlebot3" output="screen"/>
+   <node pkg="debi" type="send_goals_turtlebot3.py" name="send_goals_turtlebot3" output="screen"/>
    
    
    <!-- Run the AMCL --> 
@@ -18,10 +18,11 @@
    </node>
 
    <arg name="odom_topic" default="odom" />
-
+   <arg name="move_forward_only" default="false"/>
+  
    <!-- Run the move_base -->
    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-      <param name="base_global_planner" value="global_planner/GlobalPlanner"/>    <!--setting global planner as the base global planner-->
+
       <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS"/>  <!--setting dwa as the base local planner-->
 
       <rosparam file="$(find debi)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
@@ -34,8 +35,9 @@
       
       <rosparam file="$(find debi)/config/planners.yaml" command="load" />
       
-
+      <remap from="cmd_vel" to="/cmd_vel" />        
       <remap from="odom" to="$(arg odom_topic)"/>
+      <param name="DWAPlannerROS/min_vel_x" value="0.0" if="$(arg move_forward_only)" />
    </node>
 
 

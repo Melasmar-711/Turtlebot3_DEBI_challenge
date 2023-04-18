@@ -1,8 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3  
+
 import rospy
 import actionlib
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 from geometry_msgs.msg import Pose, Point, Quaternion
+from std_msgs.msg import String
 
 def send_goal(x, y, theta):
     client = actionlib.SimpleActionClient('move_base', MoveBaseAction)
@@ -23,18 +25,47 @@ def send_goal(x, y, theta):
 
 
 if __name__ == '__main__':
-    rospy.init_node('send_goals_turtlebot3')
-    send_goal(1.5, 0.5, 0.1)
-            
-    send_goal(4.0, 2.0, 0.2)
+    try:
+    	pub = rospy.Publisher('state', String, queue_size=10)
+    	rospy.init_node('send_goals_turtlebot3')
+    	send_goal(1.2,0.62,0)       #1st ball
+    	send_goal(1.44,0.64,0)
+    	pub.publish('one')
+
+    	#send_goal(4.0, 2.0, 0.2)
+    	#send_goal(4.0, 4.0, 0.3)
+    	#send_goal(2.0, 4.0, 0.4)
     
-    send_goal(4.0, 4.0, 0.3)
-    
-    send_goal(2.0, 4.0, 0.4)
-    
 
-    rospy.spin()
+    	while not rospy.is_shutdown():
+        	#rospy.sleep(1)
+         	rospy.loginfo("while loop")
 
-   
+         	data = rospy.wait_for_message("arm_state", String)  
+         	if data.data =='one_g'  :
+         	
+          		#send_goal(1.5,1.5,0)  #red line
+          		send_goal(1.75,1.5,0)
+          		pub.publish("red")
+         	if data.data=='two_g':
+          		#send_goal(1.5,1.5,0)  #red line
+          		send_goal(1.75,1.5,0)
+          		pub.publish("red")
+         	if data.data=="three_g":
+          		#send_goal(1.5,1.5,0)  #red line
+          		send_goal(1.75,1.5,0)
+          		pub.publish("red")
+         	if data.data=="thrown1":
+          		send_goal(0.8,0.58,0) #goal 2 point
+          		send_goal(0.62,0.58,0)
+          		pub.publish('two')
+         	if data.data=="thrown2":
+          		send_goal(0.6,2.4,0) #goal 3 point
+          		send_goal(0.45,2.4,0)
+          		pub.publish('three')
+         	#rospy.loginfo(data.data)
+         	if data.data=="done":
+          		rospy.shutdown()
 
-
+    except rospy.ROSInterruptException:
+        pass

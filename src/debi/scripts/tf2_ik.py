@@ -10,22 +10,81 @@ import numpy as np
 from geometry_msgs.msg import PointStamped
 from geometry_msgs.msg import PoseStamped
 
-
-
+import rospy # Python client library
 import actionlib # ROS action library
 from control_msgs.msg import FollowJointTrajectoryAction, FollowJointTrajectoryGoal # Controller messages
 from std_msgs.msg import Float64 # 64-bit floating point numbers
 from trajectory_msgs.msg import JointTrajectoryPoint # Robot trajectories
+from std_msgs.msg import String
+
+def move_to_absolute_pose(x, y, z):
+    # Initialize moveit_commander and rospy
+    moveit_commander.roscpp_initialize(sys.argv)
+
+    
+    #######################
+    #listener = tf.TransformListener()
+    #target_frame = 'base_footprint'
+
+    #listener.waitForTransform(target_frame, 'odom', rospy.Time(), rospy.Duration(4.0))
+    #(trans, rot) = listener.lookupTransform(target_frame, 'odom', rospy.Time(0))
+    #homogeneous_matrix = tf.transformations.concatenate_matrices(tf.transformations.translation_matrix(trans),tf.transformations.quaternion_matrix(rot))
+    
+    #point_world_homogeneous = np.array([x, y, z, 1.0])
+    #point_planning_homogeneous = np.dot(homogeneous_matrix, point_world_homogeneous)
+    #x,y,z = (point_planning_homogeneous[0], point_planning_homogeneous[1], point_planning_homogeneous[2])
+    #print(x,y,z)
+    ################################33
+    
+    
+    
+    # Set up the planning group
+    robot = moveit_commander.RobotCommander()
+    group_name = "arm"    
+    move_group = moveit_commander.MoveGroupCommander(group_name)
+    #move_group.set_pose_reference_frame("odom")
+    #print(robot.get_planning_frame())
+
+
+
+    #move_group.set_pose_reference_frame("odom")
+    
+    
+    eef_link = move_group.get_end_effector_link()
+    #planning_frame = move_group.get_planning_frame()
+    #print(planning_frame)
+    # Set the target pose for the end effector
+
+
+
+    pose_target = geometry_msgs.msg.Pose()
+    #pose_target.orientation.w = 1.0
+    pose_target.position.x = x
+    pose_target.position.y = y
+    pose_target.position.z = z
+
+
+    # Set the target pose
+    move_group.set_pose_target(pose_target,eef_link)
+
+    # Plan and execute the motion
+    move_group.go(wait=True)
+
+
+
+
+
+
 
 
 def move_to_pose(x,y,z):
     # Initialize moveit_commander and rospy node
     moveit_commander.roscpp_initialize(sys.argv)
-    rospy.init_node('move_to_pose', anonymous=True)
+
     
     ####################
     point = PointStamped()
-    point.header.frame_id = 'map'
+    point.header.frame_id = 'odom'
     point.point.x = x
     point.point.y = y
     point.point.z = z
@@ -91,9 +150,9 @@ def move_to_pose(x,y,z):
     # Set the target pose for the end effector
     target_pose = geometry_msgs.msg.Pose()
     
-    x=float(round(transformed_point.point.x,2))
-    y=float(round(transformed_point.point.y,2))
-    z=float(round(transformed_point.point.z,2))
+    x=float(round(transformed_point.point.x,3))
+    y=float(round(transformed_point.point.y,3))
+    z=float(round(transformed_point.point.z,3))
     
         
     #target_pose = PoseStamped()
@@ -137,7 +196,7 @@ def move_to_pose(x,y,z):
     
     # Clean up
     #moveit_commander.roscpp_shutdown()
-    #moveit_commander.os._exit(0)
+    #smoveit_commander.os._exit(0)
 ###########################################################
 
 
@@ -167,9 +226,41 @@ def move_robot_gripper(joint_values):
 
 if __name__ == '__main__':
     try:
-        move_to_pose(1.36,1.49,0.03)
-        
-        move_robot_gripper(-0.01)
+
+        rospy.init_node('move_to_pose', anonymous=True)
+        pub = rospy.Publisher('arm_state', String, queue_size=10)
+        while not rospy.is_shutdown():
+        #rospy.sleep(1)
+         rospy.loginfo("while loop")
+         i=0
+         data = rospy.wait_for_message("state", String)
+         #rospy.loginfo(data.data)
+         if data.data == "one":
+          move_robot_gripper([0.01])
+          move_to_pose(1.61,0.635,0.02)
+          move_robot_gripper([-0.01])
+          move_to_absolute_pose(0.25, 0, 0.2)
+          pub.publish('one_g')
+         if data.data=="red":
+          move_robot_gripper([0.01])
+          i=i+1
+          pub.publish(f'thrown{i}')
+
+         if data.data=='two':
+          move_robot_gripper([0.01])
+          move_to_pose(0.625,0.585,0.03)
+          move_robot_gripper([-0.01])
+          move_to_absolute_pose(0.25, 0, 0.2)
+          pub.publish('two_g')
+         if data.data=='three':
+          move_robot_gripper([0.01])
+          move_to_pose(0.6,2.47,0.03)
+          move_robot_gripper([-0.01])
+          move_to_absolute_pose(0.25, 0, 0.2)
+          pub.publish('three_g')
+         if i==3:
+          pub.publish("done") 
     except rospy.ROSInterruptException:
         pass
+
 
