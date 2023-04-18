@@ -2,13 +2,22 @@
 
 <br/>
 
-## Model diagram 
+## Robot diagram 
 
 
 ![overview_tf](https://user-images.githubusercontent.com/114835445/232907309-46899771-ab2c-4855-9c35-7bcfdcb47bdc.png)
 
+### Navigation Stack
 
+1) move_base http://wiki.ros.org/move_base
+2) Cost Map costmap_2d http://wiki.ros.org/costmap_2d
+3) Cost Map Obstacle Layer http://wiki.ros.org/costmap_2d/hydro/obstacles
+4) Cost Map Static Layer http://wiki.ros.org/costmap_2d/hydro/staticmap
+5) Global Planner http://wiki.ros.org/global_planner?distro=noetic
+6)  http://wiki.ros.org/navfn
+7) Local Planner base_local_planner http://wiki.ros.org/base_local_planner
 
+-------------------------------------------------------------
 ## Install turtlebot3 for ros noetic 
 `sudo apt-get install ros-noetic-turtlebot3 ros-noetic-turtlebot3-bringup ros-noetic-turtlebot3-description ros-noetic-turtlebot3-gazebo ros-noetic-turtlebot3-navigation ros-noetic-turtlebot3-simulations`
 
