@@ -2,6 +2,13 @@
 
 <br/>
 
+## Model diagram 
+
+
+![overview_tf](https://user-images.githubusercontent.com/114835445/232907309-46899771-ab2c-4855-9c35-7bcfdcb47bdc.png)
+
+
+
 ## Install turtlebot3 for ros noetic 
 `sudo apt-get install ros-noetic-turtlebot3 ros-noetic-turtlebot3-bringup ros-noetic-turtlebot3-description ros-noetic-turtlebot3-gazebo ros-noetic-turtlebot3-navigation ros-noetic-turtlebot3-simulations`
 
