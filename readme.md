@@ -45,13 +45,18 @@
 ## opening the turtlebot3 in gazebo
 
 1) you need to export the model you are going to use first. i will export it permenantly in the .bashrc using `echo "export TURTLEBOT3_MODEL=waffle_pi">> ~/.bashrc`
-2) launch the turtlebot in your world but for now we will launch it in a premade world in the package using `roslaunch debi test.launch`
+2) launch the turtlebot in your world. for now, we will launch it in a premade world in the package using `roslaunch debi test.launch`
 <br/>
    
 -------------------------
    
-## openning gazebo in DEBI_Challenge_wolrd with rviz and moveit configuration
+## RUN
    
-1) `roslaunch debi rviz_gazebo.launch`
+1) run `roslaunch debi rviz_gazebo.launch` to launch gazebo in DEBI_Challenge_wolrd with rviz and moveit configuration
+2) open a new terminal and run `python3 tf2_ik.py`
+3) open another terminal to run `python3 send_goals_turtlebot3`
+
+
+
 
 
