@@ -25,20 +25,17 @@
    `sudo apt upgrade`<br/>
 
 
-3) install required packages in your environment<br/> <br>`cd Turtlebot3_DEBI_challenge`<br/>
-
-   <br>`pip install -r requirements.txt`<br/>
-
-   if you face any problems with the versions delete the version number from the requirments.txt or try to install that pkg with pip3 install
+3) install required packages in your environment<br/>
+    `cd Turtlebot3_DEBI_challenge`
+    `pip install -r requirements.txt`
+    <br/>
+   if you faced any problem with the versions, delete the version number from the requirments.txt or try to install that pkg with pip3 install
 
 
 4) build the catkin workspace `catkin_make`
 
 5) source your workspace `echo "/home/<user-name>/Tutrtlebot3_DEBI_Robotics_challenge/devel/setup.bash" >> ~/.bashrc` replace <user-name> with your username
-
 <br/>
-<br/>
------------------------------------------------------------------
 
 ## Opening turtlebot3 in gazebo
 
