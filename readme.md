@@ -1,5 +1,4 @@
 # DEBI_Robotics_challenge
--------------------------------------------------------------
 
 <br/>
 
@@ -62,11 +61,13 @@
    
 ## Run simulation 
    
-1) run `roslaunch debi rviz_gazebo.launch` to launch gazebo in DEBI_Challenge_wolrd with rviz and moveit configuration
-2) open a new terminal and run `python3 tf2_ik.py`to start the robot's planning process
-3) open another terminal and run `python3 send_goals_turtlebot3.py` to send the positions of the balls 
+1) Launch Gazebo, RViz, and MoveIt configuration by running the command: <br/>
+       `roslaunch debi rviz_gazebo.launch`
+2) In a new terminal, run the planning process of the robot by executing the following command:<br/>
+      `python3 tf2_ik.py`
+3) In another terminal, send the positions of the balls by running the command:<br/>
+      `python3 send_goals_turtlebot3.py`
 
-
-
+Make sure that you have all the required dependencies installed and sourced before running the above commands.
 
 
