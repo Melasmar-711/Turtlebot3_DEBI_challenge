@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import rospy
 import actionlib
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
@@ -12,20 +13,23 @@ def send_goal(x, y, theta):
     goal.target_pose.pose = Pose(Point(x, y, 0.0), 
                                  Quaternion(0.0, 0.0, theta, 1.0))   
 
-    rospy.info('Got New Goal: ' + x + ' ' + y + ' ' + theta)                  
+    rospy.loginfo('Got New Goal: ' + str(x) + ' ' + str(y) + ' ' + str(theta))                  
     client.send_goal(goal)
     client.wait_for_result()
-    rospy.info("Goal is reached")  
-    rospy.info('Goal Reached: ' + str(client.get_state())) 
+    rospy.loginfo("Goal is reached")  
+    rospy.loginfo('Goal Reached: ' + str(client.get_state())) 
 
     return client.get_result()
 
 
 if __name__ == '__main__':
     rospy.init_node('send_goals_turtlebot3')
-    send_goal(1.5, 0.5, 0.1)        
+    send_goal(1.5, 0.5, 0.1)
+            
     send_goal(4.0, 2.0, 0.2)
+    
     send_goal(4.0, 4.0, 0.3)
+    
     send_goal(2.0, 4.0, 0.4)
     
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 import rospy
@@ -10,6 +10,14 @@ import numpy as np
 from geometry_msgs.msg import PointStamped
 from geometry_msgs.msg import PoseStamped
 
+
+
+import actionlib # ROS action library
+from control_msgs.msg import FollowJointTrajectoryAction, FollowJointTrajectoryGoal # Controller messages
+from std_msgs.msg import Float64 # 64-bit floating point numbers
+from trajectory_msgs.msg import JointTrajectoryPoint # Robot trajectories
+
+
 def move_to_pose(x,y,z):
     # Initialize moveit_commander and rospy node
     moveit_commander.roscpp_initialize(sys.argv)
@@ -17,7 +25,7 @@ def move_to_pose(x,y,z):
     
     ####################
     point = PointStamped()
-    point.header.frame_id = 'odom'
+    point.header.frame_id = 'map'
     point.point.x = x
     point.point.y = y
     point.point.z = z
@@ -128,8 +136,8 @@ def move_to_pose(x,y,z):
         #rospy.logerr("Motion plan failed!")
     
     # Clean up
-    moveit_commander.roscpp_shutdown()
-    moveit_commander.os._exit(0)
+    #moveit_commander.roscpp_shutdown()
+    #moveit_commander.os._exit(0)
 ###########################################################
 
 
@@ -159,7 +167,7 @@ def move_robot_gripper(joint_values):
 
 if __name__ == '__main__':
     try:
-        move_to_pose(1.14,1.49,0.03)
+        move_to_pose(1.36,1.49,0.03)
         
         move_robot_gripper(-0.01)
     except rospy.ROSInterruptException:

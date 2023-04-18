@@ -7,11 +7,12 @@ footprint_padding: 0.01
 max_obstacle_height:  0.6     # the arm is mounted on top of the robot
 
 #GeneralParams
-robot_base_frame: base_link   
-update_frequency: 5.0
-publish_frequency: 3.0   #the frequency in Hz for the map to be publish display information
+robot_base_frame: base_footprint    
+update_frequency: 10.0
+publish_frequency: 10.0   #the frequency in Hz for the map to be publish display information
 transform_tolerance: 0.5 #the amount of time in seconds to wait for a transform to become available before failing the update 
 resolution: 0.05         #meters/cell
+
 
 #Marking&Clearing
 obstacle_range: 5.0      #robot will only update its map with information about obstacles that are within 5.0 meters 
@@ -36,13 +37,13 @@ obstacle_layer:
 
   #ObservationSources
   observation_sources: laser_scan_sensor  #The name of the observation source
-  laser_scan_sensor: {data_type: LaserScan, topic: scan, marking: true, clearing: true}
+  laser_scan_sensor:  {sensor_frame: base_scan, data_type: LaserScan, topic: scan, marking: true, clearing: true}
   
 inflation_layer:
   enabled: true
   
   cost_scaling_factor: 3.0   #the cost of the inflation layer is 3 times the cost of the obstacle layer 
-  inflation_radius: 0.5      #the robot will avoid obstacles within 0.5 meters from its center
+  inflation_radius: 0.2      #the robot will avoid obstacles within 0.5 meters from its center
 
 static_layer:
   enabled: true
