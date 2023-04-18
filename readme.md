@@ -30,14 +30,14 @@
 1) clone the package using 
 `git clone https://github.com/Melasmar-711/Turtlebot3_DEBI_challenge.git`
 
-2) `sudo apt install ros-noetic-ros-control* ros-noetic-control* ros-noetic-moveit*`
-   if you face an error in the previous command try the following 
-   `sudo apt -o Dpkg::Options::="--force-overwrite" --fix-broken install`<br/>
+2) `sudo apt install ros-noetic-ros-control* ros-noetic-control* ros-noetic-moveit*` <br>
+   if you faced any error in the previous command try the following: <br> 
+   `sudo apt -o Dpkg::Options::="--force-overwrite" --fix-broken install` <br/>
    <br>`sudo apt update`<br/>
    `sudo apt upgrade`<br/>
 
 
-3) install required packages in your environment<br/>
+3) install required packages in your environment <br/>
     `cd Turtlebot3_DEBI_challenge`     <br/>
     `pip install -r requirements.txt`
     <br/>
