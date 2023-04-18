@@ -1,8 +1,6 @@
 # DEBI_Robotics_challenge
 
 <br/>
-<br/>
-
 
 ## Install turtlebot3 for ros noetic 
 `sudo apt-get install ros-noetic-turtlebot3 ros-noetic-turtlebot3-bringup ros-noetic-turtlebot3-description ros-noetic-turtlebot3-gazebo ros-noetic-turtlebot3-navigation ros-noetic-turtlebot3-simulations`
@@ -33,6 +31,7 @@
 
 5) source your workspace `echo "/home/<user-name>/Tutrtlebot3_DEBI_Robotics_challenge/devel/setup.bash" >> ~/.bashrc` replace <user-name> with your username
 <br/>
+   
 -------------------------
    
 ## Opening turtlebot3 in gazebo
