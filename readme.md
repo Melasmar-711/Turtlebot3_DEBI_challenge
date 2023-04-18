@@ -7,9 +7,6 @@
 ## Install turtlebot3 for ros noetic 
 `sudo apt-get install ros-noetic-turtlebot3 ros-noetic-turtlebot3-bringup ros-noetic-turtlebot3-description ros-noetic-turtlebot3-gazebo ros-noetic-turtlebot3-navigation ros-noetic-turtlebot3-simulations`
 
-
-<br/>
-<br/>
 <br/>
 
 -------------------------------------------------------------
@@ -26,7 +23,7 @@
 
 
 3) install required packages in your environment<br/>
-    `cd Turtlebot3_DEBI_challenge`
+    `cd Turtlebot3_DEBI_challenge`     <br/>
     `pip install -r requirements.txt`
     <br/>
    if you faced any problem with the versions, delete the version number from the requirments.txt or try to install that pkg with pip3 install
@@ -36,7 +33,7 @@
 
 5) source your workspace `echo "/home/<user-name>/Tutrtlebot3_DEBI_Robotics_challenge/devel/setup.bash" >> ~/.bashrc` replace <user-name> with your username
 <br/>
-
+-------------------------
 ## Opening turtlebot3 in gazebo
 
 1) you need to export the model you are going to use first. i will export it permenantly in the .bashrc using `echo "export TURTLEBOT3_MODEL=waffle_pi">> ~/.bashrc`
