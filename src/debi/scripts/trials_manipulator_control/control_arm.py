@@ -70,7 +70,7 @@ def move_to_absolute_pose(x, y, z):
 if __name__=='__main__':
     # Move the end effector to an absolute position
 
-    #move_to_absolute_pose(0.25, 0, 0.1)
-    move_to_absolute_pose(-0.035, 0.029, 0.18)
+    move_to_absolute_pose(0.25, 0, 0.2)
+    #move_to_absolute_pose(-0.035, 0.029, 0.18)
     #move_to_absolute_pose(1.22, 1.37, 0.17)
 

@@ -1,9 +1,10 @@
 <launch>
-  <!-- Arguments -->
+  <!-- Arguments -->	
   <arg name="model" default="waffle_pi" doc="model type [burger, waffle, waffle_pi]"/>
   <arg name="map_file" default="$(find debi)/maps/map.yaml"/>
   <arg name="open_rviz" default="true"/>
   <arg name="move_forward_only" default="false"/>
+
 
   <!-- Turtlebot3 -->
   <arg name="urdf_file" default="$(find xacro)/xacro --inorder '$(find turtlebot3_manipulation_description)/urdf/turtlebot3_manipulation_robot.urdf.xacro'" />
@@ -36,6 +37,10 @@
   <!-- rviz -->
   <group if="$(arg open_rviz)"> 
     <node pkg="rviz" type="rviz" name="rviz" required="true"
-          args="-d $(find turtlebot3_manipulation_navigation)/rviz/turtlebot3_manipulation_navigation.rviz" output="screen"/>
+          args="-d $(find debi)/rviz/turtlebot3_debi.rviz" output="screen"/>
   </group>
+
+
+
+
 </launch>

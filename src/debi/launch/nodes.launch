@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+ <node name = "move_base" pkg="debi" type="test_goal.py" output="screen"/>
+ <node name = "move_to_pose" pkg="debi" type="test2.py" output="screen"/>
+</launch>
