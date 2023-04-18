@@ -1,0 +1,41 @@
+#gmapping .yaml file
+resolution: 0.05
+maxUrange: 5.0
+maxRange: 15.0
+mapUpdateInterval: 2.0
+minimumScore: 0
+
+sigma: 0.05
+kernelSize: 1
+lstep: 0.05
+astep: 0.05
+iterations: 5
+lsigma: 0.075
+ogain: 3.0
+lskip: 0
+srr: 0.1
+srt: 0.2
+str: 0.1
+stt: 0.2
+
+linearUpdate: 1.0
+angularUpdate: 0.5
+
+temporalUpdate: -1.0
+resampleThreshold: 0.5
+particles: 30
+xmin: -10.0
+ymin: -10.0
+xmax: 10.0
+ymax: 10.0
+delta: 0.05
+occ_thresh: 0.25
+prob_hit: 0.65
+prob_miss: 0.4
+
+
+
+
+
+
+

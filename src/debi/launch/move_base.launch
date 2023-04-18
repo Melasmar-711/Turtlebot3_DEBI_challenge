@@ -1,24 +1,39 @@
 <launch>
 
-   <master auto="start"/>
-
     <!-- Run the map server --> 
-   <node name="map_server" pkg="map_server" type="map_server" args="$(find planning)/maps/map.yaml"/>
+   <node name="map_server" pkg="map_server" type="map_server" args="$(find debi)/maps/map.yaml"/>
 
+   <!-- Run send_goals_turtlebot3 -->
+   <node pkg="debi" type="send_goals_turtlebot3" name="send_goals_turtlebot3" output="screen"/>
+   
 
+   <!-- Run the gmapping -->
+   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+      <rosparam file="$(find debi)/config/gmapping.yaml" command="load" /> 
+      <remap from="scan" to="/scan" />                                           <!--remapping the scan topic to /scan--> 
+   </node>
 
+   <!-- Run the AMCL --> 
+   <node pkg="amcl" type="amcl" name="amcl" output="screen">
+      <rosparam file="$(find debi)/config/amcl.yaml" command="load" /> 
+      <remap from="scan" to="/scan" />                                          
+      <remap from="initialpose" to="/initialpose" />                
+      <remap from="cmd_vel" to="/cmd_vel" />          
+      
+   </node>
+
+   <!-- Run the move_base -->
    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-   
-   
       <param name="base_global_planner" value="global_planner/GlobalPlanner"/>    <!--setting global planner as the base global planner-->
       <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS"/>  <!--setting dwa as the base local planner-->
 
-      <rosparam file="$(find planning)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
-      <rosparam file="$(find planning)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
-      <rosparam file="$(find planning)/config/local_costmap_params.yaml" command="load" />
-      <rosparam file="$(find planning)/config/global_costmap_params.yaml" command="load" /> 
+      <rosparam file="$(find debi)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+      <rosparam file="$(find debi)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+      <rosparam file="$(find debi)/config/local_costmap_params.yaml" command="load" />
+      <rosparam file="$(find debi)/config/global_costmap_params.yaml" command="load" /> 
 
-      <rosparam file="$(find planning)/config/base_local_planner_params.yaml" command="load" />
+      <rosparam file="$(find debi)/config/base_local_planner_params.yaml" command="load" />
    </node>
+
 
 </launch> 

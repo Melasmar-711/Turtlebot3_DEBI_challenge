@@ -14,6 +14,8 @@ def move_to_absolute_pose(x, y, z):
     # Initialize moveit_commander and rospy
     moveit_commander.roscpp_initialize(sys.argv)
     rospy.init_node('move_robotic_arm', anonymous=True)
+    
+    #######################
     #listener = tf.TransformListener()
     #target_frame = 'base_footprint'
 
@@ -25,18 +27,28 @@ def move_to_absolute_pose(x, y, z):
     #point_planning_homogeneous = np.dot(homogeneous_matrix, point_world_homogeneous)
     #x,y,z = (point_planning_homogeneous[0], point_planning_homogeneous[1], point_planning_homogeneous[2])
     #print(x,y,z)
-    
+    ################################33
     
     
     
     # Set up the planning group
-    group_name = "arm"
+    robot = moveit_commander.RobotCommander()
+    group_name = "arm"    
     move_group = moveit_commander.MoveGroupCommander(group_name)
-    #move_group.set_pose_reference_frame("base_link")
+    #move_group.set_pose_reference_frame("odom")
+    #print(robot.get_planning_frame())
+
+
+
+    #move_group.set_pose_reference_frame("odom")
+    
+    
     eef_link = move_group.get_end_effector_link()
-    planning_frame = move_group.get_planning_frame()
-    print(planning_frame)
+    #planning_frame = move_group.get_planning_frame()
+    #print(planning_frame)
     # Set the target pose for the end effector
+
+
 
     pose_target = geometry_msgs.msg.Pose()
     #pose_target.orientation.w = 1.0
@@ -46,7 +58,7 @@ def move_to_absolute_pose(x, y, z):
 
 
     # Set the target pose
-    move_group.set_pose_target(pose_target)
+    move_group.set_pose_target(pose_target,eef_link)
 
     # Plan and execute the motion
     move_group.go(wait=True)
@@ -58,6 +70,7 @@ def move_to_absolute_pose(x, y, z):
 if __name__=='__main__':
     # Move the end effector to an absolute position
 
-    
-    move_to_absolute_pose(0.24, 0, 0.11)
+    #move_to_absolute_pose(0.25, 0, 0.1)
+    move_to_absolute_pose(-0.035, 0.029, 0.18)
+    #move_to_absolute_pose(1.22, 1.37, 0.17)
 

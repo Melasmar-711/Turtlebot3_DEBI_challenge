@@ -1,0 +1,61 @@
+#----------------------AMCL .yaml file----------------------#
+
+#GeneralParameters
+odom_model_type : diff    #indicates the type of odometry model to use
+odom_frame_id : odom      #indicates the frame of the odometry data
+base_frame_id : base_link #indicates the frame of the robot base
+global_frame_id : map     #indicates the frame of the map
+use_map_topic : false     #indicates whether to subscribe to the map topic or get the map from the parameter server
+
+#FilteringParameters
+min_particles : 100   #min number of arrows to be displayed (no. of guesses)
+max_particles : 1000  #max number of arrows to be displayed
+kld_err : 0.01   
+kld_z : 0.99        
+update_min_d : 0.2
+update_min_a : 0.2
+resample_interval : 2
+gui_publish_rate : 5
+#RecoveryBehaviorParameters
+transform_tolerance : 1.0
+recovery_alpha_slow : 0.001
+recovery_alpha_fast : 0.1
+
+#LaserParameters
+laser_min_range : -0.1  #min range of the laser sensor (in meters)
+laser_max_range : -0.1  #max range of the laser sensor (in meters)
+laser_max_beams : 60    #no. of beams to be displayed 
+laser_z_hit : 0.9       #weight of the hit model which means the probability of a measurement being the true distance
+laser_z_short : 0.1     #weight of the short model which means the probability of a measurement being shorter than the true distance
+laser_z_max : 0.05      #weight of the max model which means the probability of a measurement being the max range
+laser_z_rand : 0.05     #weight of the rand model which means the probability of a measurement being any distance
+
+laser_sigma_hit : 0.2             #the uncertainty of the sensor
+laser_lambda_short : 0.1          #the average distance of the short readings
+laser_likelihood_max_dist : 2.0   #the maximum distance for which we will integrate the sensor model
+laser_model_type : beam           #indicates the type of laser model to use
+
+#OdometryParameters
+odom_alpha1 : 0.2     #the expected noise in odometry's rotation estimate from the rotational component of the robot's motion
+odom_alpha2 : 0.2     #the expected noise in odometry's rotation estimate from the translational component of the robot's motion
+odom_alpha3 : 0.2     #the expected noise in odometry's translation estimate from the translational component of the robot's motion
+odom_alpha4 : 0.2     #the expected noise in odometry's translation estimate from the rotational component of the robot's motion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
